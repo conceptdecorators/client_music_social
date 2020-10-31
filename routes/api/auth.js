@@ -77,5 +77,5 @@ async (req, res) => {
   }
 );
 
-
+// routes/api/auth.js
 module.exports = router;
