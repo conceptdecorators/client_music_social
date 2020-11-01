@@ -40,7 +40,7 @@ router.post(
         .isEmpty(),
       check('skills', 'Skills is required')
         .not()
-        .isEmpty
+        .isEmpty()
     ] 
   ], 
     async (req, res) => {
