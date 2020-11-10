@@ -19,3 +19,5 @@ try {
   });
  }
 };
+
+export default setAlert;
