@@ -21,7 +21,7 @@ try {
 };
 
 // Create or update profile
-updated dispatch for profile.js/actions Profile Createdexport const createProfile = (
+export const createProfile = (
   formData, 
   history, 
   edit = false
@@ -31,7 +31,7 @@ updated dispatch for profile.js/actions Profile Createdexport const createProfil
       headers: {
         'Content-Type': 'application/json'
       }
-    };
+    }
 
     const res = await axios.post('/api/profile', formData, config);
 
