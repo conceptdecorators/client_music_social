@@ -22,4 +22,4 @@ ProfileEducation.propTypes = {
   education: PropTypes.array.isRequired
 };
 
-export default ProfileEducation;
+export default ProfileEducation; 
