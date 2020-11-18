@@ -10,7 +10,8 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
     getProfiles();
   }, [getProfiles]);
 
-  return <Fragment>
+  return (
+  <Fragment>
     { loading ? <Spinner /> : <Fragment>
       <h1 className='large text-primary'>Developers</h1>
       <p className='lead'>
@@ -24,7 +25,8 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
         ) : <h4>No profiles found...</h4>}
       </div>
     </Fragment> }
-  </Fragment>;
+  </Fragment>
+  );
 };
 
 Profiles.propTypes = {
