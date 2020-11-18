@@ -186,7 +186,7 @@ export const addEducation = (formData, history) => async dispatch => {
       payload: { msg: err.response.statusText, status: err.response.status }
     });
   }
-}
+};
 
 // Delete experience
 export const deleteExperience = id => async dispatch => {
