@@ -5,7 +5,7 @@ const initialState = {
   post: null,
   loading: true,
   error: {}
-}
+};
 
 export default function(state = initialState, action) {
   const { type, payload } = action;
@@ -20,7 +20,7 @@ export default function(state = initialState, action) {
       case POST_ERROR:
       return {
         ...state,
-        posts: payload,
+        error: payload,
         loading: false
       };
       case UPDATE_LIKES:
