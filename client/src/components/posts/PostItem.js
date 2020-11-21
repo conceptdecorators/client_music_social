@@ -69,7 +69,7 @@ PostItem.defaultProps = {
 };
 
 PostItem.propTypes = {
-  posts: PropTypes.object.isRequired,
+  post: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
   addLike: PropTypes.func.isRequired,
   removeLike: PropTypes.func.isRequired,
