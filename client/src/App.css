@@ -316,6 +316,8 @@ button {
   border-bottom: solid 1px var(--primary-color);
   opacity: 0.9;
   z-index: 150;
+  font-family: "Sofia Pro Bold", sans-serif;
+  font-weight: 800;
 }
 
 .navbar ul {
@@ -529,7 +531,9 @@ button {
   .container {
     margin-top: 8rem;
   }
-
+  .container-space {
+    margin: 200px;
+  }
   .hide-sm {
     display: none;
   }
