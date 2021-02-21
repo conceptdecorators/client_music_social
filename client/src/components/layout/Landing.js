@@ -158,9 +158,12 @@ const Landing = ({ isAuthenticated }) => {
           </div>
           <div class="box-2">
             <p class="promo-seller_content_title">
-              <span class="btn-txt round btn btn-light btn-bordered">
+              <Link
+                to="/register"
+                class="btn-txt round btn btn-light btn-bordered"
+              >
                 Get started
-              </span>
+              </Link>
             </p>
           </div>
         </div>
