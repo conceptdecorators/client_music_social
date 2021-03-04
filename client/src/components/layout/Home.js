@@ -243,7 +243,7 @@ around the world --> */}
                   <div class="lazyload">
                     <div
                       class="Artist_artist__2zGCA Artist_artist2__ZdGL1"
-                      data-style="background: url(assets\images\banners\artist_hero_2.png) center top / cover no-repeat;"
+                      data-style="background: url(assets/images/banners/artist_hero_2.png) center top / cover no-repeat;"
                       style='background: url("assets\images\banners\artist_hero_2.png") center top / cover no-repeat;'
                     >
                       <ImageTwelve

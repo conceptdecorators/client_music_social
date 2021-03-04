@@ -47,7 +47,7 @@ const Sync = ({ isAuthenticated }) => {
           >
             Background Music
           </div>
-          <p class="text-white medium-text pt-pb-160">
+          <p class="text-white medium-text pt-90">
             Zilah Music Publishing is a quick and easy way to license background
             music. We take the worry out so you don't have to waste time sifting
             through hours of music losing precious production time.Our music
@@ -56,7 +56,7 @@ const Sync = ({ isAuthenticated }) => {
           </p>
         </div>
         <div class="service-container pt-pb-160">
-          <p class="text-white medium-text services-social pt-90">
+          <p class="text-white medium-text services-social">
             {" "}
             For artists, bands, composers, songwriters and labels{" "}
           </p>

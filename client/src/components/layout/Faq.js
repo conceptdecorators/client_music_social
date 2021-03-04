@@ -12,17 +12,17 @@ const Faq = ({ isAuthenticated }) => {
 
   return (
     <React.Fragment>
-      <div class="main">
-        <div class="service-container">
-          <div class="sk-faq--light pb-160">
-            <h3 class="sk-faq__header">Questions</h3>
-            <div class="wrapper">
+      <div className="main">
+        <div className="service-container">
+          <div className="sk-faq--light pb-160">
+            <h3 className="sk-faq__header">Questions</h3>
+            <div className="wrapper">
               {/* <!-- Accordion Heading One --> */}
-              <div class="parent-tab">
+              <div className="parent-tab">
                 <input type="radio" name="tab" id="tab-1" checked />
                 <label for="tab-1">
                   <span>When do I need a license?</span>
-                  <div class="icon">
+                  <div className="icon">
                     <FaPlus
                       style={{
                         height: "20px",
@@ -37,7 +37,7 @@ const Faq = ({ isAuthenticated }) => {
                     />
                   </div>
                 </label>
-                <div class="content">
+                <div className="content">
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing thelit.
                     Quam, repellendus facere, id porro magnam blanditiiss
@@ -48,11 +48,11 @@ const Faq = ({ isAuthenticated }) => {
               </div>
 
               {/* <!-- Accordion Heading Two --> */}
-              <div class="parent-tab">
+              <div className="parent-tab">
                 <input type="radio" name="tab" id="tab-2" />
                 <label for="tab-2">
                   <span>What does the license cover?</span>
-                  <div class="icon">
+                  <div className="icon">
                     <FaPlus
                       style={{
                         height: "20px",
@@ -62,7 +62,7 @@ const Faq = ({ isAuthenticated }) => {
                     />
                   </div>
                 </label>
-                <div class="content">
+                <div className="content">
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing thelit.
                     Quam, repellendus facere, id porro magnam blanditiiss
@@ -73,11 +73,11 @@ const Faq = ({ isAuthenticated }) => {
               </div>
 
               {/* <!-- Accordion Heading Three --> */}
-              <div class="parent-tab tab-3">
+              <div className="parent-tab tab-3">
                 <input type="radio" name="tab" id="tab-3" />
-                <label for="tab-3" class="tab-3">
+                <label for="tab-3" className="tab-3">
                   <span>Can I monetize my song? </span>
-                  <div class="icon">
+                  <div className="icon">
                     <FaPlus
                       style={{
                         height: "20px",
@@ -87,13 +87,13 @@ const Faq = ({ isAuthenticated }) => {
                     />
                   </div>
                 </label>
-                <div class="content">
+                <div className="content">
                   {/* <!-- Sub Heading One --> */}
-                  <div class="child-tab">
+                  <div className="child-tab">
                     <input type="checkbox" name="sub-tab" id="tab-4" />
                     <label for="tab-4">
                       <span>Sub Heading One</span>
-                      <div class="icon">
+                      <div className="icon">
                         <FaPlus
                           style={{
                             height: "20px",
@@ -103,7 +103,7 @@ const Faq = ({ isAuthenticated }) => {
                         />
                       </div>
                     </label>
-                    <div class="sub-content">
+                    <div className="sub-content">
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing
                         thelit dolor. Utfacilis labore, exercitationem fuga
@@ -112,11 +112,11 @@ const Faq = ({ isAuthenticated }) => {
                     </div>
                   </div>
                   {/* <!-- Sub Heading Two --> */}
-                  <div class="child-tab">
+                  <div className="child-tab">
                     <input type="checkbox" name="sub-tab" id="tab-5" />
                     <label for="tab-5">
                       <span>Sub Heading Two</span>
-                      <div class="icon">
+                      <div className="icon">
                         <FaPlus
                           style={{
                             height: "20px",
@@ -126,7 +126,7 @@ const Faq = ({ isAuthenticated }) => {
                         />
                       </div>
                     </label>
-                    <div class="sub-content">
+                    <div className="sub-content">
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing
                         thelit dolor. Utfacilis labore, exercitationem fuga
@@ -138,11 +138,11 @@ const Faq = ({ isAuthenticated }) => {
               </div>
 
               {/* <!-- Accordion Heading Four --> */}
-              <div class="parent-tab">
+              <div className="parent-tab">
                 <input type="radio" name="tab" id="tab-6" />
                 <label for="tab-6">
                   <span>How do I release my first track with Zilah?</span>
-                  <div class="icon">
+                  <div className="icon">
                     <FaPlus
                       style={{
                         height: "20px",
@@ -152,7 +152,7 @@ const Faq = ({ isAuthenticated }) => {
                     />
                   </div>
                 </label>
-                <div class="content">
+                <div className="content">
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing thelit.
                     Quam, repellendus facere, id porro magnam blanditiiss

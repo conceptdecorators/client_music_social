@@ -173,8 +173,8 @@ img {
 .bg-light,
 .badge-light,
 .alert-light {
-  background: var(--light-color);
-  color: #333;
+  background: var(--dark-color);
+  color: var(--light-color);
 }
 
 .btn-dark,
@@ -300,7 +300,7 @@ button {
 }
 
 .table th {
-  background: var(--light-color);
+  background: orange;
 }
 
 /* Navbar */
@@ -906,7 +906,7 @@ ol {
   font-weight: bold;
 }
 .btn-light.btn-bordered {
-  color: #000;
+  color: #fff;
   border-color: #000;
 }
 .btn-light.btn-bordered:hover {
@@ -1536,7 +1536,7 @@ input[type="checkbox"] {
   padding-bottom: 160px !important;
 }
 .pb-160 {
-  padding-top: 160px !important;
+  /* padding-top: 160px !important; */
   padding-bottom: 160px !important;
 }
 .pt-160 {

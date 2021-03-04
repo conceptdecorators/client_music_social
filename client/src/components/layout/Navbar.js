@@ -3,13 +3,14 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { logout } from "../../actions/auth";
+import * as FaIcons from "react-icons/fa";
 import ImageOne from "../../img/zilah-log-small.png";
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <ul>
       <li>
-        <Link to="/profiles">Developers</Link>
+        <Link to="/profiles">Artists</Link>
       </li>
       <li>
         <Link to="/posts">Posts</Link>

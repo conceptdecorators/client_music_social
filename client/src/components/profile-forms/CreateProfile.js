@@ -15,9 +15,11 @@ const CreateProfile = ({ createProfile, history }) => {
     bio: "",
     twitter: "",
     facebook: "",
-    linkedin: "",
+    spotify: "",
     youtube: "",
     instagram: "",
+    soundcloud: "",
+    lastfm: "",
   });
 
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
@@ -32,9 +34,11 @@ const CreateProfile = ({ createProfile, history }) => {
     bio,
     twitter,
     facebook,
-    linkedin,
+    spotify,
     youtube,
     instagram,
+    soundcloud,
+    lastfm,
   } = formData;
 
   const onChange = (e) =>
@@ -61,10 +65,10 @@ const CreateProfile = ({ createProfile, history }) => {
             <option value="Songwriter">Songwriter</option>
             <option value="Producer">Producer</option>
             <option value="Musician">Musician</option>
-            <option value="Student or Learning">Student or Learning</option>
-            <option value="Instructor">Instructor or Teacher</option>
-            <option value="Intern">Intern</option>
-            <option value="Other">Other</option>
+            <option value="Publisher">Publisher</option>
+            <option value="Content Creator">Content Creator</option>
+            <option value="Public Realations">Public Realations</option>
+            <option value="Manager">Manager</option>
           </select>
           <small className="form-text">
             Give us an idea of where you are at in your career
@@ -115,7 +119,8 @@ const CreateProfile = ({ createProfile, history }) => {
             onChange={(e) => onChange(e)}
           />
           <small className="form-text">
-            Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)
+            Please use comma separated values (eg. Arranger, Composers,
+            Musicians, Songwriters)
           </small>
         </div>
         <div className="form-group">
@@ -188,12 +193,12 @@ const CreateProfile = ({ createProfile, history }) => {
             </div>
 
             <div className="form-group social-input">
-              <i className="fab fa-linkedin fa-2x"></i>
+              <i className="fab fa-spotify fa-2x"></i>
               <input
                 type="text"
-                placeholder="Linkedin URL"
-                name="linkedin"
-                value={linkedin}
+                placeholder="Spotify URL"
+                name="spotify"
+                value={spotify}
                 onChange={(e) => onChange(e)}
               />
             </div>
@@ -205,6 +210,26 @@ const CreateProfile = ({ createProfile, history }) => {
                 placeholder="Instagram URL"
                 name="instagram"
                 value={instagram}
+                onChange={(e) => onChange(e)}
+              />
+            </div>
+            <div className="form-group social-input">
+              <i className="fab fa-soundcloud fa-2x"></i>
+              <input
+                type="text"
+                placeholder="Soundcloud URL"
+                name="soundcloud"
+                value={soundcloud}
+                onChange={(e) => onChange(e)}
+              />
+            </div>
+            <div className="form-group social-input">
+              <i className="fab fa-lastfm-square fa-2x"></i>
+              <input
+                type="text"
+                placeholder="Lastfm URL"
+                name="lastfm"
+                value={lastfm}
                 onChange={(e) => onChange(e)}
               />
             </div>

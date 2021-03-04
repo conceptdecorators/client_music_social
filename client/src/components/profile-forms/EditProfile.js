@@ -3,6 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { createProfile, getCurrentProfile } from "../../actions/profile";
+import { FaSpotify } from "react-icons/fa";
 
 const EditProfile = ({
   profile: { profile, loading },
@@ -20,9 +21,11 @@ const EditProfile = ({
     bio: "",
     twitter: "",
     facebook: "",
-    linkedin: "",
+    spotify: "",
     youtube: "",
     instagram: "",
+    soundcloud: "",
+    lastfm: "",
   });
 
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
@@ -43,6 +46,8 @@ const EditProfile = ({
       facebook: loading || !profile.social ? "" : profile.social.facebook,
       youtube: loading || !profile.social ? "" : profile.social.youtube,
       instagram: loading || !profile.social ? "" : profile.social.instagram,
+      soundcloud: loading || !profile.social ? "" : profile.social.soundcloud,
+      lastfm: loading || !profile.social ? "" : profile.social.lastfm,
     });
   }, [loading, getCurrentProfile]);
 
@@ -56,9 +61,11 @@ const EditProfile = ({
     bio,
     twitter,
     facebook,
-    linkedin,
+    spotify,
     youtube,
     instagram,
+    soundcloud,
+    lastfm,
   } = formData;
 
   const onChange = (e) =>
@@ -85,10 +92,10 @@ const EditProfile = ({
             <option value="Songwriter">Songwriter</option>
             <option value="Producer">Producer</option>
             <option value="Musician">Musician</option>
-            <option value="Student or Learning">Student or Learning</option>
-            <option value="Instructor">Instructor or Teacher</option>
-            <option value="Intern">Intern</option>
-            <option value="Other">Other</option>
+            <option value="Publisher">Publisher</option>
+            <option value="Content Creator">Content Creator</option>
+            <option value="Public Relations">Public Relations</option>
+            <option value="Manager">Manager</option>
           </select>
           <small className="form-text">
             Give us an idea of where you are at in your career
@@ -139,7 +146,7 @@ const EditProfile = ({
             onChange={(e) => onChange(e)}
           />
           <small className="form-text">
-            Please use comma separated values (eg. Artists, Composers,
+            Please use comma separated values (eg. Arranger, Composers,
             Musicians, Songwriters)
           </small>
         </div>
@@ -213,12 +220,12 @@ const EditProfile = ({
             </div>
 
             <div className="form-group social-input">
-              <i className="fab fa-linkedin fa-2x"></i>
+              <i className="fab fa-spotify fa-2x"></i>
               <input
                 type="text"
-                placeholder="Linkedin URL"
-                name="linkedin"
-                value={linkedin}
+                placeholder="Spotify URL"
+                name="spotify"
+                value={spotify}
                 onChange={(e) => onChange(e)}
               />
             </div>
@@ -230,6 +237,26 @@ const EditProfile = ({
                 placeholder="Instagram URL"
                 name="instagram"
                 value={instagram}
+                onChange={(e) => onChange(e)}
+              />
+            </div>
+            <div className="form-group social-input">
+              <i className="fab fa-soundcloud fa-2x"></i>
+              <input
+                type="text"
+                placeholder="Soundcloud URL"
+                name="soundcloud"
+                value={soundcloud}
+                onChange={(e) => onChange(e)}
+              />
+            </div>
+            <div className="form-group social-input">
+              <i className="fab fa-lastfm-square fa-2x"></i>
+              <input
+                type="text"
+                placeholder="Lastfm URL"
+                name="lastfm"
+                value={lastfm}
                 onChange={(e) => onChange(e)}
               />
             </div>
