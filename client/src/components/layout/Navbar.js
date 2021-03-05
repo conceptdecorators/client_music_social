@@ -101,8 +101,8 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           </a>
         </li>
         <li className="navbar_btn">
-          <a href="/" className="button">
-            Sign Up
+          <a href="/blog" className="button">
+            Blog
           </a>
         </li>
       </ul>
