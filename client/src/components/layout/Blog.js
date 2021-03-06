@@ -19,7 +19,7 @@ const Blog = ({ isAuthenticated }) => {
       })
       .catch(console.error);
   }, []);
-  
+
   if (isAuthenticated) {
     return <Redirect to="/dashboard" />;
   }
