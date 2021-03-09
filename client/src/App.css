@@ -866,7 +866,7 @@ ol {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid #000c2d;
+  /* border-top: 1px solid #000c2d; */
   border-bottom: 1px solid #000c2d;
   margin-bottom: -1px;
   padding-top: 16px;

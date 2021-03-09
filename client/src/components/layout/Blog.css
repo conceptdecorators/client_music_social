@@ -74,7 +74,7 @@ header {
   color: black;
 }
 
-.wrapper {
+.wrapper-blog {
   width: 100%;
   max-width: 900px;
   padding: 0 10px;
@@ -87,11 +87,11 @@ header {
   font-weight: 600;
 }
 
-main .wrapper {
+main .wrapper-blog {
   padding: 50px 15px;
 }
 
-.post {
+.post-blog {
   padding: 20px;
   margin-bottom: 50px;
   background-color: #fff;

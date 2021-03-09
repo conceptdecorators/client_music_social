@@ -42,15 +42,15 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         <Link
           to="/login"
           style={{
-            justifycontent: "center",
-            alignitems: "center",
-            textdecoration: "none",
+            justifyContent: "center",
+            alignItems: "center",
+            textDecoration: "none",
             padding: "10px 20px",
             height: "100%",
             width: "100%",
             border: "none",
             outline: "none",
-            borderradius: "4px",
+            borderRadius: "4px",
             background: "#ff9800",
             color: "#fff",
           }}

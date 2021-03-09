@@ -7,7 +7,7 @@ const Post = ({ article }) => {
   const postDescription = marked(description);
 
   return (
-    <div className="post">
+    <div className="post-blog">
       <h2 className="title">{name}</h2>
       {featuredImage && (
         <img
@@ -17,7 +17,13 @@ const Post = ({ article }) => {
           title={name}
         />
       )}
-      <section dangerouslySetInnerHTML={{ __html: postDescription }} />
+      <section
+        style={{
+          color: "black",
+          fontWeight: "600",
+        }}
+        dangerouslySetInnerHTML={{ __html: postDescription }}
+      />
     </div>
   );
 };

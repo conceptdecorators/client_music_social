@@ -27,25 +27,23 @@ const Blog = ({ isAuthenticated }) => {
   return (
     <React.Fragment>
       <div className="App">
-        <div className="container">
-          <header>
-            <div className="wrapper">
-              <span>React and Content</span>
-            </div>
-          </header>
-          <main>
-            <div className="blog__page">
-              <h1 className="blog__page__header">
-                ZILAH MUSIC PUBLISHING NEWS
-              </h1>
-              <div className="blogs">
-                <div className="wrapper">
-                  <Posts posts={articles} />
-                </div>
+        {/* <div className="container"> */}
+        <header>
+          <div className="wrapper-blog">
+            <span>React and Content</span>
+          </div>
+        </header>
+        <main>
+          <div className="blog__page">
+            <h1 className="blog__page__header">ZILAH MUSIC PUBLISHING NEWS</h1>
+            <div className="blogs">
+              <div className="wrapper-blog">
+                <Posts posts={articles} />
               </div>
             </div>
-          </main>
-        </div>
+          </div>
+        </main>
+        {/* </div> */}
       </div>
     </React.Fragment>
   );
