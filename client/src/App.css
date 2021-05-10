@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
 /* Global Styles */
 :root {
   --primary-color: orange;
@@ -15,7 +16,8 @@
 
 body {
   /* font-family: "Raleway", sans-serif; */
-  font-family: "Sofia Pro Bold", sans-serif;
+  /* font-family: "Sofia Pro Bold", sans-serif; */
+  font-family: "Inter", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   background-color: #000000;
@@ -316,7 +318,8 @@ button {
   border-bottom: solid 1px var(--primary-color);
   opacity: 0.9;
   z-index: 150;
-  font-family: "Sofia Pro Bold", sans-serif;
+  /* font-family: "Sofia Pro Bold", sans-serif; */
+  font-family: "Inter", sans-serif;
   font-weight: 800;
 }
 
@@ -553,8 +556,7 @@ button {
 
   /* Navbar */
   .navbar {
-    display: block;
-    text-align: center;
+    position: sticky;
   }
 
   .navbar ul {
@@ -1264,7 +1266,7 @@ ol {
 }
 input[type="radio"],
 input[type="checkbox"] {
-  display: none;
+  /* display: none; */
 }
 /* Services */
 .hero-image {

@@ -2,6 +2,8 @@ import React from "react";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import Typewriter from "react-simple-typewriter";
+// import Typist from "react-text-typist";
 import ImageOne from "../../img/images/banners/4.png";
 import ImageTwo from "../../img/images/banners/artist_hero_1.png";
 import ImageThree from "../../img/images/album-website/Greta Van Fleet- Black Smoke Rising.jpg";
@@ -46,13 +48,25 @@ const Landing = ({ isAuthenticated }) => {
       <div class="main">
         <div class="main_container black-text">
           <div class="main_content">
+            <h2 id="text">THE FUTURE OF </h2>
             <h2 id="text">
-              THE FUTURE OF
-              <br />
-              <span>MUSIC</span>
-              <span>ART</span>
-              <span>TALENT</span>
-              <span>PUBLISHING</span>
+              <span
+                style={{
+                  display: "inline-block",
+                }}
+              >
+                {/* Style will be inherited from the parent element */}
+                <Typewriter
+                  loop
+                  cursor
+                  cursorStyle="_"
+                  typeSpeed={60}
+                  deleteSpeed={200}
+                  delaySpeed={1000}
+                  words={["MUSIC", "ART", "TALENT", "PUBLISHING"]}
+                />
+                {/* <Typist sentences={["MUSIC", "ART", "TALENT", "PUBLISHING"]} /> */}
+              </span>
             </h2>
 
             <div class="ld-fancy-heading mask-text col-lg-5">
@@ -61,20 +75,13 @@ const Landing = ({ isAuthenticated }) => {
                 data-split-text="true"
                 data-split-options='{ "type": "words" }'
               >
-                <span
-                  class="ld-fh-txt"
-                  style={{
-                    lineheight: "1.9em",
-                  }}
-                >
-                  <span>
-                    Zilah Music Publishing is a licensing & publishing company.
-                    We represent the works of composers, music producers, indie
-                    bands, singers and rappers. Zilah Music Publishing works
-                    with music libraries for TV, ad agencies, video games, film
-                    & television. We also represent a growing roster of
-                    celebrity talent.{" "}
-                  </span>
+                <span>
+                  Zilah Music Publishing is a licensing & publishing company. We
+                  represent the works of composers, music producers, indie
+                  bands, singers and rappers. Zilah Music Publishing works with
+                  music libraries for TV, ad agencies, video games, film &
+                  television. We also represent a growing roster of celebrity
+                  talent.{" "}
                 </span>
               </p>
             </div>
@@ -336,7 +343,13 @@ const Landing = ({ isAuthenticated }) => {
               <div class="wrapper">
                 {/* <!-- Accordion Heading One --> */}
                 <div class="parent-tab">
-                  <input type="radio" name="tab" id="tab-1" checked />
+                  <input
+                    style={{ display: "none" }}
+                    type="radio"
+                    name="tab"
+                    id="tab-1"
+                    checked
+                  />
                   <label for="tab-1">
                     <span>When do I need a license?</span>
                     <div class="icon">
@@ -355,7 +368,12 @@ const Landing = ({ isAuthenticated }) => {
 
                 {/* <!-- Accordion Heading Two --> */}
                 <div class="parent-tab">
-                  <input type="radio" name="tab" id="tab-2" />
+                  <input
+                    style={{ display: "none" }}
+                    type="radio"
+                    name="tab"
+                    id="tab-2"
+                  />
                   <label for="tab-2">
                     <span>What does the license cover?</span>
                     <div class="icon">
@@ -374,7 +392,12 @@ const Landing = ({ isAuthenticated }) => {
 
                 {/* <!-- Accordion Heading Three --> */}
                 <div class="parent-tab tab-3">
-                  <input type="radio" name="tab" id="tab-3" />
+                  <input
+                    style={{ display: "none" }}
+                    type="radio"
+                    name="tab"
+                    id="tab-3"
+                  />
                   <label for="tab-3" class="tab-3">
                     <span>Can I monetize my song? </span>
                     <div class="icon">
@@ -421,7 +444,12 @@ const Landing = ({ isAuthenticated }) => {
 
                 {/* <!-- Accordion Heading Four --> */}
                 <div class="parent-tab">
-                  <input type="radio" name="tab" id="tab-6" />
+                  <input
+                    style={{ display: "none" }}
+                    type="radio"
+                    name="tab"
+                    id="tab-6"
+                  />
                   <label for="tab-6">
                     <span>How do I release my first track with Zilah?</span>
                     <div class="icon">

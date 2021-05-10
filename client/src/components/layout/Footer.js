@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="footer_links">
           <div className="footer_link-wrapper">
             <div className="footer_link-items">
-              <h2>About Us</h2>
+              <h2 className="footer-heading">About Us</h2>
               <a href="/">How it works</a>
               <a href="/">Testimonials</a>
               <a href="/">Careers</a>
@@ -22,7 +22,7 @@ const Footer = () => {
             </div>
 
             <div className="footer_link-items">
-              <h2>Contact Us</h2>
+              <h2 className="footer-heading">Contact Us</h2>
               <a href="/">Contact</a>
               <a href="/">Support</a>
               <a href="/">Destination</a>
@@ -31,14 +31,14 @@ const Footer = () => {
           </div>
           <div className="footer_link-wrapper">
             <div className="footer_link-items">
-              <h2>Videos</h2>
+              <h2 className="footer-heading">Videos</h2>
               <a href="/">Submit Music</a>
               <a href="/">Ambassadors</a>
               <a href="/">Agency</a>
               <a href="/">Influencer</a>
             </div>
             <div className="footer_link-items">
-              <h2>Social media</h2>
+              <h2 className="footer-heading">Social media</h2>
               <a href="/">Instagram</a>
               <a href="/">Youtube</a>
               <a href="/">Facebook</a>
