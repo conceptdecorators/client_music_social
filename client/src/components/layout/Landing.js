@@ -16,6 +16,7 @@ import ImageNine from "../../img/images/banners/multimedia-icon-upload-orange-sh
 import ImageTen from "../../img/images/banners/multimedia-icon-upload-2-orange.png";
 import ImageEleven from "../../img/images/banners/ecommerce-money-orange.png";
 import ImageTwelve from "../../img/images/banners/artist_hero_2.png";
+import { Helmet } from "react-helmet";
 
 const Landing = ({ isAuthenticated }) => {
   if (isAuthenticated) {
@@ -45,6 +46,10 @@ const Landing = ({ isAuthenticated }) => {
 
     // <!-- hero section -->
     <React.Fragment>
+      <Helmet>
+        <title>Zilah Music Publishing</title>
+        <meta name="description" content="Upload your music to the world" />
+      </Helmet>
       <div class="main">
         <div class="main_container black-text">
           <div class="main_content">
