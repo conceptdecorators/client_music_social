@@ -3,7 +3,6 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import Typewriter from "react-simple-typewriter";
-// import Typist from "react-text-typist";
 import ImageOne from "../../img/images/banners/4.png";
 import ImageTwo from "../../img/images/banners/artist_hero_1.png";
 import ImageThree from "../../img/images/album-website/Greta Van Fleet- Black Smoke Rising.jpg";

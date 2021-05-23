@@ -1,183 +1,246 @@
 import React, { Fragment, useState } from "react";
-import { Link, withRouter } from "react-router-dom";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { uploadMusic } from "../../actions/profile";
+import { Link } from "react-router-dom";
+// import PropTypes from "prop-types";
+// import { connect } from "react-redux";
+// import { uploadMusic } from "../../actions/profile";
+// cloudinary form
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
-const UploadMusic = ({ uploadMusic, history }) => {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    artistName: "",
+const UploadMusic = () => {
+  const [date, setSelectedDate] = useState(null);
+  const [values, setValues] = useState({
+    name: "",
+    artist: "",
+    label: "",
+    email: "",
+    message: "",
     songTitle: "",
-    recordLabel: "",
-    releasedDate: "",
+    phone: "",
     genre: "",
-    // to: "",
-    Publishing: false,
-    Distribution: false,
-    licensing: false,
-    description: "",
+    date: "",
+    uploadedFiles: [],
+    buttonText: "Submit",
+    uploadPhotosButtonText: "Upload audio files",
   });
 
-  const [toDateDisabled, toggleDisabled] = useState(false);
-
+  // destructure state variables
   const {
-    fullName,
-    artistName,
+    name,
+    artist,
     songTitle,
-    recordLabel,
-    releasedDate,
+    label,
+    email,
+    message,
+    phone,
     genre,
-    // to,
-    Publishing,
-    Distribution,
-    licensing,
-    description,
-  } = formData;
+    uploadedFiles,
+    buttonText,
+    uploadPhotosButtonText,
+  } = values;
+  // destructure env variables
+  const {
+    REACT_APP_API,
+    REACT_APP_CLOUDINARY_CLOUD_NAME,
+    REACT_APP_CLOUDINARY_UPLOAD_SECRET,
+  } = process.env;
+  console.log(date);
+  // event handler
+  const handleChange = (name) => (event) => {
+    setValues({ ...values, [name]: event.target.value });
+  };
 
-  const onChange = (e) =>
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setValues({ ...values, buttonText: "...sending" });
+    // send to backend for email
+    console.table({
+      name,
+      email,
+      phone,
+      message,
+      uploadedFiles,
+      genre,
+      date,
+      label,
+    });
+    axios({
+      method: "POST",
+      url: `${REACT_APP_API}/feedback`,
+      data: {
+        name,
+        artist,
+        songTitle,
+        label,
+        email,
+        date,
+        genre,
+        phone,
+        message,
+        uploadedFiles,
+      },
+    })
+      .then((response) => {
+        // console.log('feedback submit response', response);
+        if (response.data.success) toast.success("Thanks for your feedback");
+        setValues({
+          ...values,
+          name: "",
+          artist: "",
+          songTitle: "",
+          label: "",
+          phone: "",
+          email: "",
+          genre: "",
+          date: "",
+          message: "",
+          uploadedFiles: [],
+          buttonText: "Submitted",
+          uploadPhotosButtonText: "Uploaded",
+        });
+      })
+      .catch((error) => {
+        // console.log('feedback submit error', error.response);
+        if (error.response.data.error) toast.error("Failed! Try again!");
+      });
+  };
+  // function onChangeInput(value) {
+  //   console.log(value);
+  // }
+  const uploadWidget = () => {
+    window.cloudinary.openUploadWidget(
+      {
+        cloud_name: REACT_APP_CLOUDINARY_CLOUD_NAME,
+        upload_preset: REACT_APP_CLOUDINARY_UPLOAD_SECRET,
+        tags: ["ebooks"],
+      },
+      function (error, result) {
+        // console.log(result);
 
-  
-  return (
+        setValues({
+          ...values,
+          uploadedFiles: result,
+          uploadPhotosButtonText: `${
+            result ? result.length : 0
+          } Photos uploaded`,
+          // Added to include Audio Tracks
+          height: 200,
+          width: 500,
+          flags: "waveform",
+          resource_type: "video",
+        });
+      }
+    );
+  };
+  const feedbackForm = () => (
     <Fragment>
       <h1 className="large text-primary">Upload Music</h1>
       <p className="lead">
         <i className="fas fa-headphones"></i> Add your Music Release details
       </p>
       <small>* = required field</small>
-      <form
-        className="form"
-        onSubmit={(e) => {
-          e.preventDefault();
-          uploadMusic(formData, history);
-        }}
-      >
+      <div className="form-group">
+        <button
+          onClick={() => uploadWidget()}
+          className="btn btn-outline-secondary btn-block p-5"
+        >
+          {uploadPhotosButtonText}
+        </button>
+      </div>
+      <form className="form" onSubmit={handleSubmit}>
         <div className="form-group">
-          <input
+          <label>Description</label>
+          <textarea
+            onChange={handleChange("message")}
             type="text"
+            className="form-control"
+            cols="30"
+            rows="5"
+            placeholder="* Description Music Label Services (ex. Publishing, Distributionor Licensing)"
+            value={message}
+            required
+          ></textarea>
+        </div>
+
+        <div className="form-group">
+          <label>Your Name</label>
+          <input
+            className="form-control"
             placeholder="* Full Name"
-            name="fullName"
-            value={fullName}
-            onChange={(e) => onChange(e)}
-            // value={values.fullName}
+            type="text"
+            onChange={handleChange("name")}
+            value={name}
             required
           />
         </div>
+
         <div className="form-group">
+          <label>Your Email</label>
           <input
-            type="text"
+            className="form-control"
+            placeholder="* Email"
+            type="email"
+            onChange={handleChange("email")}
+            value={email}
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label>Your Phone</label>
+          <input
+            className="form-control"
+            placeholder="* Your Phone Number"
+            type="number"
+            onChange={handleChange("phone")}
+            value={phone}
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label>Artist Name</label>
+          <input
+            className="form-control"
             placeholder="* Artist Name"
-            name="artistName"
-            value={artistName}
-            // value={values.artistName}
-            onChange={(e) => onChange(e)}
-            // onChange={set("artistName")}
+            type="text"
+            onChange={handleChange("artist")}
+            value={artist}
             required
           />
         </div>
         <div className="form-group">
+          <label>Song Title</label>
           <input
+            className="form-control"
+            placeholder="* Song Title"
             type="text"
-            placeholder="Song Title"
-            name="songTitle"
+            onChange={handleChange("songTitle")}
             value={songTitle}
-            // onChange={(e) => onChange(e)}
-            onChange={onChange}
-            // onChange={set("songTitle")}
-            // value={values.songTitle}
+            required
           />
         </div>
         <div className="form-group">
+          <label>Record Label Name</label>
           <input
-            type="text"
+            className="form-control"
             placeholder="Record Label Name"
-            name="recordLabel"
-            onChange={(e) => onChange(e)}
-            // onChange={onChange}
-            value={recordLabel}
-            // onChange={set("recordLabel")}
-            // value={values.recordLabel}
+            type="text"
+            onChange={handleChange("label")}
+            value={label}
           />
-        </div>
-        <div className="form-group">
-          <h4>Single Released Date</h4>
-
-          <input
-            type="date"
-            name="releasedDate"
-            value={releasedDate}
-            onChange={(e) => onChange(e)}
-            // onChange={onChange}
-            // onChange={set("releasedDate")}
-            // value={values.releasedDate}
-          />
-        </div>
-        <div className="form-group">
-          <h4>Music Label Services</h4>
-          <label>
-            <p>
-              <input
-                type="checkbox"
-                name="Publishing"
-                value={Publishing}
-                onChange={onChange}
-                onChange={(e) => onChange(e)}
-                // onChange={(e) => {
-                //   setFormData({ ...formData, Publishing: !Publishing });
-                //   toggleDisabled(!toDateDisabled);
-                // }}
-                // onChange={set("Publishing")}
-                // value={values.Publishing}
-              />{" "}
-              Publishing
-            </p>
-            <p>
-              <input
-                type="checkbox"
-                name="Distribution"
-                checked={Distribution}
-                value={Distribution}
-                onChange={(e) => onChange(e)}
-                // onChange={onChange}
-                // value={Distribution}
-                // onChange={(e) => {
-                //   setFormData({ ...formData, Distribution: !Distribution });
-                //   toggleDisabled(!toDateDisabled);
-                // }}
-                // onChange={set("Distribution")}
-                // value={values.Distribution}
-              />{" "}
-              Distribution
-            </p>
-            <p>
-              <input
-                type="checkbox"
-                name="Licensing"
-                checked={licensing}
-                value={licensing}
-                onChange={(e) => onChange(e)}
-                // onChange={onChange}
-                // value={licensing}
-                // onChange={(e) => {
-                //   setFormData({ ...formData, licensing: !licensing });
-                //   toggleDisabled(!toDateDisabled);
-                // }}
-                // onChange={set("licensing")}
-                // value={values.licensing}
-              />{" "}
-              Licensing
-            </p>
-          </label>
         </div>
 
         <div className="form-group">
+          <label>Music Genre:</label>
           <select
-            // value={values.color}
-            // onChange={set("color")}
-            name="genre"
-            onChange={onChange}
+            className="form-control"
             value={genre}
+            type="select"
+            onChange={handleChange("genre")}
           >
             <option value="0">* Select Genre</option>
             <option value="Alternative">Alternative</option>
@@ -233,7 +296,7 @@ const UploadMusic = ({ uploadMusic, history }) => {
             ))} */}
           </select>
           <small className="form-text">
-            Give us an idea of where you are at in your career
+            Give us an idea of your music category
           </small>
         </div>
 
@@ -247,18 +310,24 @@ const UploadMusic = ({ uploadMusic, history }) => {
             disabled={toDateDisabled ? "disabled" : ""}
           />
         </div> */}
+
         <div className="form-group">
-          <textarea
-            name="description"
-            cols="30"
-            rows="5"
-            placeholder="Music Description"
-            value={description}
-            onChange={(e) => onChange(e)}
-            // onChange={set("description")}
-            // value={values.description}
-          ></textarea>
+          <label>Song Release Date</label>
+          <br />
+          {/* <Moment
+            format="YYYY/MM/DD"
+            onChange={handleChange("date")}
+            value={date}
+          >
+            {date}
+          </Moment> */}
+          <DatePicker
+            selected={date}
+            onChange={(date) => setSelectedDate(date)}
+          />
         </div>
+        <br />
+
         <input type="submit" className="btn btn-primary my-1" />
         <Link className="btn btn-light my-1" to="/dashboard">
           Go Back
@@ -266,10 +335,18 @@ const UploadMusic = ({ uploadMusic, history }) => {
       </form>
     </Fragment>
   );
+  return (
+    <>
+      <ToastContainer />
+      {/* <div className="container text-center">
+        <h1 className="p-5">Feedback Online</h1>
+      </div> */}
+      <div className="container col-md-8 offset-md-2">{feedbackForm()}</div>
+      <br />
+      <br />
+      <br />
+    </>
+  );
 };
 
-UploadMusic.propTypes = {
-  uploadMusic: PropTypes.func.isRequired,
-};
-
-export default connect(null, { uploadMusic })(withRouter(UploadMusic));
+export default UploadMusic;
