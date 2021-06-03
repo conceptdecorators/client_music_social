@@ -6,6 +6,7 @@ import ImageOne from "../../img/zilah-log-small.png";
 import "boxicons";
 
 const Footer = () => {
+  const today = new Date();
   return (
     <div className="App">
       {/* // <!-- Footer Section --> */}
@@ -15,16 +16,20 @@ const Footer = () => {
             <div className="footer_link-items">
               <h2 className="footer-heading">About Us</h2>
               <a href="/">How it works</a>
-              <a href="/">Testimonials</a>
-              <a href="/">Careers</a>
-              <a href="/">Investments</a>
+              <a href="/about">About</a>
+              <a href="/services">Services</a>
+              <a href="/sync">Sync</a>
+              <a href="/blog">Blog</a>
+              {/* <a href="/">Testimonials</a>
+              <a href="/">Careers</a> */}
+              <a href="/">Privacy Policy </a>
               <a href="/">Terms of Services</a>
             </div>
 
             <div className="footer_link-items">
               <h2 className="footer-heading">Contact Us</h2>
               <a href="/">Contact</a>
-              <a href="/">Support</a>
+              <a href="/faq">Faq</a>
               <a href="/">Destination</a>
               <a href="/">Sponsorship</a>
             </div>
@@ -40,9 +45,11 @@ const Footer = () => {
             <div className="footer_link-items">
               <h2 className="footer-heading">Social media</h2>
               <a href="/">Instagram</a>
-              <a href="/">Youtube</a>
-              <a href="/">Facebook</a>
-              <a href="/">Twitter</a>
+              <a href="https://www.youtube.com/user/zilah126/videos">Youtube</a>
+              <a href="https://www.facebook.com/Zilah-Music-Publishing-162465233801098/#">
+                Facebook
+              </a>
+              <a href="https://twitter.com/zilahmusicpub">Twitter</a>
             </div>
           </div>
         </div>
@@ -54,7 +61,7 @@ const Footer = () => {
               </a>
             </div>
             <p className="website_rights">
-              Zilah Music Publishing 2020. All rights reserved
+              Zilah Music Publishing {today.getFullYear()}. All rights reserved
             </p>
             <div className="social_icons">
               <a href="/" className="social_icons-link" target="_blank">

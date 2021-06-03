@@ -4,6 +4,8 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 require("dotenv").config();
 
+// console.log(process.env);
+
 // import routes
 const feedbackRoutes = require("./routes/feedback");
 
@@ -15,6 +17,15 @@ app.use(morgan("dev"));
 app.use(bodyParser.json());
 // app.use(express.json());
 app.use(cors());
+
+// Prevent Cors Errors
+// app.use((req, res) => {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.headers("Access-Contol-Allow-Headers", "*");
+//   if (req.method === "OPTIONS") {
+//     res.header("Access-Control-Allow-Methods", "PUT,POST, PATCH, DELETE, GET");
+//   }
+// });
 
 // routes
 app.use("/api", feedbackRoutes);

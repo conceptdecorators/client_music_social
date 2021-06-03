@@ -30,12 +30,11 @@ const Blog = ({ isAuthenticated }) => {
         {/* <div className="container"> */}
         <header>
           <div className="wrapper-blog">
-            <span>React and Content</span>
+            <h1 className="blog__page__header">ZILAH MUSIC PUBLISHING NEWS</h1>
           </div>
         </header>
         <main>
           <div className="blog__page">
-            <h1 className="blog__page__header">ZILAH MUSIC PUBLISHING NEWS</h1>
             <div className="blogs">
               <div className="wrapper-blog">
                 <Posts posts={articles} />

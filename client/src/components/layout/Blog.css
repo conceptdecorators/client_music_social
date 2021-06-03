@@ -117,8 +117,9 @@ main .wrapper-blog {
 .blog__page__header {
   letter-spacing: -1px;
   font-size: 35px;
-  color: orange;
+  color: black;
   text-align: center;
+  padding: 10px;
 }
 .blogs {
   /* display: grid;

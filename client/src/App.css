@@ -316,7 +316,7 @@ button {
   z-index: 1;
   width: 100%;
   top: 0;
-  border-bottom: solid 1px var(--primary-color);
+  background-color: black;
   opacity: 0.9;
   z-index: 150;
   /* font-family: "Sofia Pro Bold", sans-serif; */
@@ -687,7 +687,7 @@ h2 span:first-child {
   display: initial;
 }
 #text {
-  font-size: 68px;
+  font-size: 53px;
   line-height: 1.4;
   letter-spacing: 0;
   font-family: "Gotham", "sans-serif";
@@ -840,9 +840,6 @@ ol {
   margin-right: -15px;
 }
 
-.bg-color-blue {
-  background-color: #001f41;
-}
 .services-social {
   margin: 5px;
   text-transform: uppercase;
@@ -1312,7 +1309,7 @@ input[type="checkbox"] {
   font-size: 20px;
 }
 .medium-text span {
-  color: #00f5d4;
+  color: var(--primary-color);
   cursor: pointer;
 }
 .middle-services {
@@ -1558,9 +1555,11 @@ input[type="checkbox"] {
 }
 /* artist cards */
 .flex-row {
-  display: flex;
-  flex-direction: row;
+  /* display: flex;
+  flex-direction: row; */
   padding: 0px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 .cards {
   /* margin: 0; */
@@ -1579,7 +1578,7 @@ input[type="checkbox"] {
 }
 .card__content {
   padding: 100px;
-  width: 45%;
+  width: 100%;
 }
 .card__content h1 {
   color: #fca311;
@@ -1764,9 +1763,11 @@ input[type="checkbox"] {
     font-size: 1.5rem;
   }
   .flex-row {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
   }
   .card__content {
     padding: 50px;
@@ -1814,7 +1815,7 @@ input[type="checkbox"] {
   .container-1 {
     display: flex;
     justify-content: space-evenly;
-    font-size: 14px;
+    font-size: 22px;
   }
   .card__content {
     padding: 0px;
@@ -1889,6 +1890,12 @@ input[type="checkbox"] {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
+  }
+  .company-list-section__StyledBalancedColumns {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: 48px;
+    column-gap: 48px;
   }
 }
 

@@ -5,6 +5,9 @@ import PropTypes from "prop-types";
 import { AiFillInstagram } from "react-icons/ai";
 import { AiOutlineTwitter } from "react-icons/ai";
 import { AiFillYoutube } from "react-icons/ai";
+import { FaSpotify } from "react-icons/fa";
+import { FaMixcloud } from "react-icons/fa";
+import { SiDeezer } from "react-icons/si";
 
 const Services = ({ isAuthenticated }) => {
   if (isAuthenticated) {
@@ -42,8 +45,26 @@ const Services = ({ isAuthenticated }) => {
 
             <p class="text-white medium-text pt-90">
               {" "}
-              follow us on <span>Twitter, Facebook, Spotify</span> and{" "}
-              <span>Youtube.</span>{" "}
+              follow us on{" "}
+              <span>
+                <a href={"https://twitter.com/zilahmusicpub"}>Twitter,</a>{" "}
+              </span>
+              <span>
+                <a
+                  href={
+                    "https://www.facebook.com/Zilah-Music-Publishing-162465233801098/#"
+                  }
+                >
+                  Facebook,
+                </a>{" "}
+                Spotify
+              </span>{" "}
+              and{" "}
+              <span>
+                <a href={"https://www.youtube.com/user/zilah126/videos"}>
+                  Youtube.
+                </a>
+              </span>{" "}
             </p>
           </div>
         </div>
@@ -89,7 +110,7 @@ const Services = ({ isAuthenticated }) => {
               licenses is easy and simple for licensors.{" "}
             </p>
 
-            <div class="company-list-section__StyledMediumOnly pt-90">
+            <div class="company-list-section__StyledMediumOnly">
               <div class="company-list-section__StyledBalancedColumns MhgKS">
                 <ul class="company-list">
                   <li>
@@ -133,34 +154,34 @@ const Services = ({ isAuthenticated }) => {
         </div>
       </div>
 
-      <div class="bg-color-blue">
-        <div class="service-container pt-pb-160">
-          <p class="text-white medium-text services-social pt-90" id="text">
-            {" "}
-            Digital Distribution{" "}
-          </p>
-          <p class="text-white medium-text pt-90">
-            {" "}
-            We bring your music to online digital retailers and other digital
-            music service providers. We simultaneously release the music to
-            major streaming platforms and through our music catalogue generating
-            fans from around the world.{" "}
-          </p>
-          <p class="text-white medium-text pt-90">Listen On: </p>
-          <p class="text-white medium-text pt-90">
-            {" "}
-            <AiFillInstagram />
-            <span class="services-social">Instagram</span> <AiOutlineTwitter />
-            <span
-              class="client
-            "
-            >
-              Twitter
-            </span>{" "}
-            <AiFillYoutube />
-            <span class="services-social">Youtube</span>{" "}
-          </p>
-        </div>
+      <div class="service-container pt-pb-160">
+        <p class="text-white medium-text services-social pt-90" id="text">
+          {" "}
+          Digital Distribution{" "}
+        </p>
+        <p class="text-white medium-text pt-90">
+          {" "}
+          We bring your music to online digital retailers and other digital
+          music service providers. We simultaneously release the music to major
+          streaming platforms and through our music catalogue generating fans
+          from around the world.{" "}
+        </p>
+        <p class="text-white medium-text pt-90">Listen On: </p>
+        <p class="text-white medium-text pt-90">
+          {" "}
+          <FaSpotify />
+          <a href={"https://www.spotify.com/us/"}>
+            <span class="services-social">Spotify</span>
+          </a>
+          <SiDeezer />
+          <a href={"https://www.deezer.com/en/"}>
+            <span class="services-social">Deezer</span>
+          </a>
+          <FaMixcloud />
+          <a href={"https://www.mixcloud.com/"}>
+            <span class="services-social">Mixcloud</span>
+          </a>
+        </p>
       </div>
     </React.Fragment>
   );

@@ -203,7 +203,7 @@ const Landing = ({ isAuthenticated }) => {
                       color: "#fca311",
                     }}
                   ></i>
-                  Learn More Featured{" "}
+                  <a href="/services">Learn More Featured </a>
                 </p>
               </div>
             </div>
@@ -293,7 +293,7 @@ const Landing = ({ isAuthenticated }) => {
                       // data-style="background: url(assets/images/banners/artist_hero_2.png) center top / cover no-repeat;"
                       style={{
                         background:
-                          "url(assets/images/banners/artist_hero_2.png) center top / cover no-repeat",
+                          "url(img/images/banners/artist_hero_2.png) center top / cover no-repeat",
                       }}
                     >
                       <img
@@ -362,10 +362,10 @@ const Landing = ({ isAuthenticated }) => {
                   </label>
                   <div class="content">
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing
-                      thelit. Quam, repellendus facere, id porro magnam
-                      blanditiiss quoteos dolores ratione quidem ipsam esse quos
-                      pariatur, repellat obcaecati!
+                      The music license is the "license", "license agreement"
+                      and or ``synchronisation" is the contract that allows you
+                      to use, reproduce music in a synchronised way for your
+                      production.
                     </p>
                   </div>
                 </div>
@@ -386,10 +386,11 @@ const Landing = ({ isAuthenticated }) => {
                   </label>
                   <div class="content">
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing
-                      thelit. Quam, repellendus facere, id porro magnam
-                      blanditiiss quoteos dolores ratione quidem ipsam esse quos
-                      pariatur, repellat obcaecati!
+                      The license only covers licensed music agreements from
+                      right holders. It does not cover public performances
+                      royalties, which are paid by broadcaster, cable,
+                      content,commercials,podcast,video on demand,distributor,
+                      publishing or manufacturer.
                     </p>
                   </div>
                 </div>
@@ -413,16 +414,16 @@ const Landing = ({ isAuthenticated }) => {
                     <div class="child-tab">
                       <input type="checkbox" name="sub-tab" id="tab-4" />
                       <label for="tab-4">
-                        <span>Sub Heading One</span>
+                        <span>How?</span>
                         <div class="icon">
                           <i class="fas fa-plus"></i>
                         </div>
                       </label>
                       <div class="sub-content">
                         <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          thelit dolor. Utfacilis labore, exercitationem fuga
-                          minima a illo modi vitaerse dignissimos? Vero?
+                          Yes. We maximize your music revenue based on your
+                          sound recordings and composition through traditional
+                          and non-traditional revenue streams.
                         </p>
                       </div>
                     </div>
@@ -430,16 +431,31 @@ const Landing = ({ isAuthenticated }) => {
                     <div class="child-tab">
                       <input type="checkbox" name="sub-tab" id="tab-5" />
                       <label for="tab-5">
-                        <span>Sub Heading Two</span>
+                        <span>Artist</span>
                         <div class="icon">
                           <i class="fas fa-plus"></i>
                         </div>
                       </label>
                       <div class="sub-content">
                         <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          thelit dolor. Utfacilis labore, exercitationem fuga
-                          minima a illo modi vitaerse dignissimos? Vero?
+                          Recordings sold in physical form like vinyl , DVD, or
+                          CD.
+                        </p>
+                      </div>
+                    </div>
+                    {/* <!-- Sub Heading Three --> */}
+                    <div class="child-tab">
+                      <input type="checkbox" name="sub-tab" id="tab-7" />
+                      <label for="tab-7">
+                        <span>Music Monetization:</span>
+                        <div class="icon">
+                          <i class="fas fa-plus"></i>
+                        </div>
+                      </label>
+                      <div class="sub-content">
+                        <p>
+                          Videos,Social Media, Virtual Reality, Merchandise,
+                          Lyrics,sync license, commercials.
                         </p>
                       </div>
                     </div>
@@ -470,6 +486,9 @@ const Landing = ({ isAuthenticated }) => {
                   </div>
                 </div>
               </div>
+              <a class="btn-txt round btn btn-warning btn-bordered" href="/faq">
+                Learn More
+              </a>
             </div>
           </div>
           {/* <!-- /.row --> */}
