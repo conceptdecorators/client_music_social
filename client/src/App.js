@@ -8,6 +8,7 @@ import Sync from "./components/layout/Sync";
 import Faq from "./components/layout/Faq";
 import Home from "./components/layout/Home";
 import Blog from "./components/layout/Blog";
+import Upload from "./components/layout/Upload";
 import Routes from "./components/routing/Routes";
 import "./App.css";
 import Footer from "./components/layout/Footer";
@@ -40,6 +41,7 @@ const App = () => {
               <Route exact path="/sync" component={Sync} />
               <Route exact path="/faq" component={Faq} />
               <Route exact path="/blog" component={Blog} />
+              <Route path="/upload" exact component={Upload} />
               <Route component={Routes} />
             </Switch>
           </Fragment>

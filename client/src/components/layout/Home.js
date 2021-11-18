@@ -2,6 +2,7 @@ import React from "react";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import Layout from "./Layout";
 import ImageOne from "../../img/images/banners/4.png";
 import ImageTwo from "../../img/images/banners/artist_hero_1.png";
 import ImageThree from "../../img/images/album-website/Greta Van Fleet- Black Smoke Rising.jpg";
@@ -102,11 +103,7 @@ around the world --> */}
         <div class="main_container black-text">
           <div class="main_content mobile-margin">
             <div class="ld-fancy-heading mask-text col-lg-5">
-              <p
-                class="text-white font-size-21 black-text"
-                data-split-text="true"
-                data-split-options='{ "type": "words" }'
-              >
+              <p class="text-white font-size-21 black-text">
                 <span
                   class="ld-fh-txt"
                   style="

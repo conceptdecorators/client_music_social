@@ -16,11 +16,7 @@ const About = ({ isAuthenticated }) => {
         <div class="main_container black-text">
           <div class="main_content">
             <div class="ld-fancy-heading mask-text col-lg-5">
-              <p
-                class="text-white font-size-21"
-                data-split-text="true"
-                data-split-options='{ "type": "words" }'
-              >
+              <p class="text-white font-size-21">
                 <span
                   class="ld-fh-txt"
                   style={{

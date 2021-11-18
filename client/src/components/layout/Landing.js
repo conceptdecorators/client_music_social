@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
+import Layout from "./Layout";
 import PropTypes from "prop-types";
 import Typewriter from "react-simple-typewriter";
 import ImageOne from "../../img/images/banners/4.png";
@@ -74,11 +75,7 @@ const Landing = ({ isAuthenticated }) => {
             </h2>
 
             <div class="ld-fancy-heading mask-text col-lg-5">
-              <p
-                class="text-white font-size-21"
-                data-split-text="true"
-                data-split-options='{ "type": "words" }'
-              >
+              <p class="text-white font-size-21">
                 <span>
                   Zilah Music Publishing is a licensing & publishing company. We
                   represent the works of composers, music producers, indie
@@ -127,11 +124,7 @@ const Landing = ({ isAuthenticated }) => {
         <div class="main_container black-text">
           <div class="main_content mobile-margin">
             <div class="ld-fancy-heading mask-text col-lg-5">
-              <p
-                class="text-white font-size-21 black-text"
-                data-split-text="true"
-                data-split-options='{ "type": "words" }'
-              >
+              <p class="text-white font-size-21 black-text">
                 <span
                   class="ld-fh-txt"
                   style={{

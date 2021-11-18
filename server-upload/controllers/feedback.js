@@ -12,7 +12,7 @@ exports.emailFeedback = (req, res) => {
     artist,
     songTitle,
     genre,
-    startdate,
+    date,
     label,
   } = req.body;
   const emailData = {

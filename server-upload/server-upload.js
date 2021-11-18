@@ -1,8 +1,8 @@
+require("dotenv").config();
 const express = require("express");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-require("dotenv").config();
 
 // console.log(process.env);
 
@@ -14,7 +14,8 @@ const app = express();
 
 // middlewares
 app.use(morgan("dev"));
-app.use(bodyParser.json());
+app.use(express.json());
+// app.use(bodyParser.json());
 // app.use(express.json());
 app.use(cors());
 
