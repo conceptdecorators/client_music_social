@@ -135,8 +135,8 @@ img {
 
 .btn {
   display: inline-block;
-  background: var(--light-color);
-  color: #333;
+  background: var(--primary-color );
+  color: var(--light-color);
   padding: 0.4rem 1.3rem;
   font-size: 1rem;
   border: none;
@@ -324,7 +324,7 @@ button {
   font-weight: 800;
 }
 
-.navbar ul {
+.navbar {
   display: flex;
 }
 
@@ -1601,9 +1601,9 @@ input[type="checkbox"] {
 .bx-chevron-right {
   margin-right: 5px;
 }
-
+/* Deleted for Mobile Responsive */
 @media screen and (max-width: 960px) {
-  .navbar_container {
+  /* .navbar_container {
     display: flex;
     justify-content: space-between;
     height: 80px;
@@ -1698,7 +1698,7 @@ input[type="checkbox"] {
 
   #mobile-menu.is-active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
-  }
+  } */
 }
 
 /* Mobile Responsive */
@@ -1835,8 +1835,7 @@ input[type="checkbox"] {
 }
 @media screen and (max-width: 480px) {
   .logo-dark {
-    width: 270px;
-    padding: 10px 0;
+    width: 200px;
   }
   #text {
     font-size: 30px;
@@ -1933,8 +1932,7 @@ input[type="checkbox"] {
 }
 @media screen and (max-width: 320px) {
   .logo-dark {
-    width: 250px;
-    padding: 10px 0;
+    width: 180px;
   }
   .div-block-25 {
     max-width: 100px;

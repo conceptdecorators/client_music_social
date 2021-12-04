@@ -5,6 +5,10 @@ import "react-toastify/dist/ReactToastify.min.css";
 import Layout from "./Layout";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import bootStrap from "./bootStrap.css";
+
+// import Button from "react-bootstrap/Button";
+// import "bootstrap/dist/css/bootstrap.min.css";
 
 const Upload = () => {
   const [date, setSelectedDate] = useState(null);
@@ -142,23 +146,13 @@ const Upload = () => {
       <div className="form-group">
         <button
           onClick={() => uploadWidget()}
-          className="btn btn-outline-secondary btn-block p-5"
+          className="btn btn-outline-secondary btn-block p-4"
         >
           {uploadPhotosButtonText}
         </button>
       </div>
 
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label className="text-warning">Description</label>
-          <textarea
-            onChange={handleChange("message")}
-            type="text"
-            className="form-control"
-            value={message}
-            required
-          ></textarea>
-        </div>
         <div className="form-group">
           <label className="text-warning">Your Name</label>
           <input
@@ -311,6 +305,17 @@ const Upload = () => {
             selected={date}
             onChange={(date) => setSelectedDate(date)}
           />
+        </div>
+        <br />
+        <div className="form-group">
+          <label className="text-warning">Description</label>
+          <textarea
+            onChange={handleChange("message")}
+            type="text"
+            className="form-control"
+            value={message}
+            required
+          ></textarea>
         </div>
         <br />
         <button className="btn btn-outline-primary btn-block">

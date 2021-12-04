@@ -37,7 +37,7 @@ const Footer = () => {
           <div className="footer_link-wrapper">
             <div className="footer_link-items">
               <h2 className="footer-heading">Videos</h2>
-              <a href="/">Submit Music</a>
+              <a href="Upload">Submit Music</a>
               <a href="/">Ambassadors</a>
               <a href="/">Agency</a>
               <a href="/">Influencer</a>
